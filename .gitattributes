@@ -111,3 +111,5 @@
 *.si_ filter=lfs diff=lfs merge=lfs -text
 *.sy_ filter=lfs diff=lfs merge=lfs -text
 *.pack filter=lfs diff=lfs merge=lfs -text
+*.css filter=lfs diff=lfs merge=lfs -text
+*.map filter=lfs diff=lfs merge=lfs -text
