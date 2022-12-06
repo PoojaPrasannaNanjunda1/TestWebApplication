@@ -20,7 +20,7 @@ The prerequisites for running this application are:
 8. Launch the application by clicking on `Start without Debugging` or `(Ctrl + F5)`.
 9. The Web application page should be visible by opening `http://localhost:80` in the browser upon a successful build as shown below:
 
-<img src="images/TestWebApplication.png" width="100%" alt="Test Web Application">
+<img src="images/TestWebApplication.PNG" width="100%" alt="Test Web Application">
 
 ## (or) Run using the docker image
 1. Launch Docker Desktop, and ensure that it is running.
@@ -29,7 +29,7 @@ The prerequisites for running this application are:
 4. To run the web application execute `docker run -d -p 80:80 -v "<path-to-database>":/database poojananjunda/pooja_docker_images:latest`. Replace `<path-to-database>` appropriately. 
 5. The application can be launched by opening `http://localhost:80` in the browser.
 
-<img src="images/TestWebApplication.png" width="100%" alt="Test Web Application">
+<img src="images/TestWebApplication.PNG" width="100%" alt="Test Web Application">
 
 ## Application functionality
 1. When starting the application for the first time, a table called `DataTable` is created, if it is not already present in the provided database.
