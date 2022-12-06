@@ -18,9 +18,7 @@ The prerequisites for running this application are:
 5. Web application's default port number `80` can be changed by modifying the `applicationUrl` key in the `launchSettings.json`.
 6. This solution is dependent on the NuGet packages: `System.Data.SQLite.Core 1.0.117` and `StyleCop.Analyzers 1.1.118`. Ensure that the package dependencies are resolved when clicking on `Build Solution` or `(Ctrl + Shift + B)`.
 8. Launch the application by clicking on `Start without Debugging` or `(Ctrl + F5)`.
-9. The Web application page should be visible by opening `http://localhost:80` in the browser upon a successful build as shown below:
-
-<img src="images/TestWebApplication.PNG" width="100%" alt="Test Web Application">
+9. The Web application page should be visible by opening `http://localhost:80` in the browser upon a successful build as shown below.
 
 ## (or) Run using the docker image
 1. Launch Docker Desktop, and ensure that it is running.
