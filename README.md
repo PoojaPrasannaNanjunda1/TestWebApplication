@@ -12,8 +12,8 @@ The prerequisites for running this application are:
 1. Download the database provided in the repository under `Database\Testdatabase.db`.
 2. Open the `TestWebApplication2.sln` file given in the repository to view the source code for Web application.
 3. Configure the `Dockerized` and `DatabasePath` keys in the `appsettings.json` file as per user's requirement.
-3.1. `Dockerized`: `true` indicates that the web application is being run from a docker container. `false` indicates that the web application is being run locally through Visual Studio. 
-3.2. `DatabasePath`: indicates the path to the local SQLite database. A new database is provided in this repository under `Database\Testdatabase.db`.
+ `Dockerized`: `true` indicates that the web application is being run from a docker container. `false` indicates that the web application is being run locally through Visual Studio.
+  `DatabasePath`: indicates the path to the local SQLite database. A new database is provided in this repository under `Database\Testdatabase.db`.
 4. `Program.cs`is the entry point for this application where `index.html` is configured as the default landing page.
 5. Web application's default port number `80` can be changed by modifying the `applicationUrl` key in the `launchSettings.json`.
 6. This solution is dependent on the NuGet packages: `System.Data.SQLite.Core 1.0.117` and `StyleCop.Analyzers 1.1.118`. Ensure that the package dependencies are resolved when clicking on `Build Solution` or `(Ctrl + Shift + B)`.
@@ -26,7 +26,7 @@ The prerequisites for running this application are:
 1. Launch Docker Desktop, and ensure that it is running.
 2. Pull the docker image for web application by running `docker pull poojananjunda/pooja_docker_images:latest` in command prompt.
 3. Download the database provided in the repository under `Database\Testdatabase.db`.
-4. To run the web application execute `docker run -d -p 80:80 -v "<path-to-database>":/database poojananjunda/pooja_docker_images:latest`. Replace `<path-to-database>` appropriately and ensure that the drive letter is in lowercase. 
+4. To run the web application execute `docker run -d -p 80:80 -v "<path-to-database>":/database poojananjunda/pooja_docker_images:latest`. Replace `<path-to-database>` appropriately. 
 5. The application can be launched by opening `http://localhost:80` in the browser.
 
 <img src="images/TestWebApplication.png" width="100%" alt="Test Web Application">
