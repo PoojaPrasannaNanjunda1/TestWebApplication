@@ -9,8 +9,8 @@ The prerequisites for running this application are:
 
 ## Build and Run using Visual Studio 2022
 1. Open the `TestWebApplication2.sln` file given in the repository to view the source code for Web application.
-2. Configure the `DatabasePath` key in the `appsettings.json` file as per user's requirement. Add the path without the database file name. For example, the value of `DatabasePath` key can be `"C:\\Projects\\Netzsch\\Database"`. 
-   `DatabasePath`: indicates the path to the local SQLite database. By default, it creates a new database `Testdatabase.db` in the `DatabasePath` folder.
+2. Configure the `DatabasePath` key in the `appsettings.json` file as per user's requirement. Add the path without the database file name. For example, the value of `DatabasePath` key can be `"C:\\Projects\\Netzsch\\Database"`.\
+   `DatabasePath`: indicates the path to the local SQLite database. By default, it creates a new database `TestDatabase.db` in the `DatabasePath` folder.
 3. `Program.cs`is the entry point for this application where `index.html` is configured as the default landing page.
 4. Web application's default port number `80` can be changed by modifying the `applicationUrl` key in the `launchSettings.json`.
 5. This solution is dependent on the NuGet packages: `System.Data.SQLite.Core 1.0.117` and `StyleCop.Analyzers 1.1.118`. Ensure that the package dependencies are resolved when clicking on `Build Solution` or `(Ctrl + Shift + B)`.
