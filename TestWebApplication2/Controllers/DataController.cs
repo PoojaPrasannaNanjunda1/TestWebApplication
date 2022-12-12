@@ -36,12 +36,18 @@ namespace TestWebApplication2.Controllers
 
             this.settings = new ConfigurationParameters()
             {
-                Dockerized = configuration.GetValue<bool>("ConfigurationParameters:Dockerized"),
                 DatabasePath = configuration.GetValue<string>("ConfigurationParameters:DatabasePath"),
             };
 
+            // Create the database folder structure if it does not exist
+            if (!Directory.Exists(this.settings.DatabasePath))
+            {
+                Directory.CreateDirectory(this.settings.DatabasePath);
+            }
+            var dataSource = Path.Combine(this.settings.DatabasePath, "TestDatabase.db");
+
             // create the connection to sqlite database.
-            this.sQLiteConnection = this.CreateConnection();
+            this.sQLiteConnection = this.CreateConnection(dataSource);
 
             // exit the application if the database connection is not created.
             if (this.sQLiteConnection == null)
@@ -149,16 +155,15 @@ namespace TestWebApplication2.Controllers
         /// This method creates the connection to the database.
         /// </summary>
         /// <returns>The connection object.</returns>
-        private SQLiteConnection CreateConnection()
+        private SQLiteConnection CreateConnection(string dataSource)
         {
             SQLiteConnection sqlite_conn;
-
-            // Create a new database connection:
-            sqlite_conn = new SQLiteConnection($"Data Source= {this.settings.DatabasePath} ; Version = 3; New = True; Compress = True; ");
-
-            // Open the connection:
             try
             {
+                // Create a new database connection:
+                sqlite_conn = new SQLiteConnection($"Data Source= {dataSource} ; Version = 3; New = True; Compress = True; ");
+
+                // Open the connection:
                 sqlite_conn.Open();
             }
             catch (Exception)

@@ -13,11 +13,6 @@ namespace TestWebApplication2.Models
     public class ConfigurationParameters
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the execution mode is through docker or not.
-        /// </summary>
-        public bool Dockerized { get; set; }
-
-        /// <summary>
         /// Gets or sets the DatabasePath.
         /// </summary>
         public string? DatabasePath { get; set; }
