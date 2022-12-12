@@ -5,15 +5,13 @@ This project provides a ASP.NET web application, developed in .NET 6. The front-
 The prerequisites for running this application are:  
 1. Download and install [Visual Studio 2022](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030).
 2. Install `ASP.NET and web development` workload of Visual Studio 2022 in the default location.
-3. Download [SQLite3 database](https://www.sqlite.org/2022/sqlite-tools-win32-x86-3400000.zip) which is used as a local database to store user inputs.
-4. (Optional) Install [Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module) to run the web application using the docker image. 
+3. (Optional) Install [Docker Desktop](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module) to run the web application using the docker image. 
 
 ## Build and Run using Visual Studio 2022
 1. Download the database provided in the repository under `Database\Testdatabase.db`.
 2. Open the `TestWebApplication2.sln` file given in the repository to view the source code for Web application.
-3. Configure the `Dockerized` and `DatabasePath` keys in the `appsettings.json` file as per user's requirement.
- `Dockerized`: `true` indicates that the web application is being run from a docker container. `false` indicates that the web application is being run locally through Visual Studio.
-  `DatabasePath`: indicates the path to the local SQLite database. A new database is provided in this repository under `Database\Testdatabase.db`.
+3. Configure the `DatabasePath` key in the `appsettings.json` file as per user's requirement. Add the path without the database file name. For example, the value of `DatabasePath` key can be `"C:\\Projects\\Netzsch\\Database"`. 
+   `DatabasePath`: indicates the path to the local SQLite database. By default, it creates a new database `Testdatabase.db` in the `DatabasePath` folder.
 4. `Program.cs`is the entry point for this application where `index.html` is configured as the default landing page.
 5. Web application's default port number `80` can be changed by modifying the `applicationUrl` key in the `launchSettings.json`.
 6. This solution is dependent on the NuGet packages: `System.Data.SQLite.Core 1.0.117` and `StyleCop.Analyzers 1.1.118`. Ensure that the package dependencies are resolved when clicking on `Build Solution` or `(Ctrl + Shift + B)`.
@@ -23,9 +21,8 @@ The prerequisites for running this application are:
 ## (or) Run using the docker image
 1. Launch Docker Desktop, and ensure that it is running.
 2. Pull the docker image for web application by running `docker pull poojananjunda/pooja_docker_images:latest` in command prompt.
-3. Download the database provided in the repository under `Database\Testdatabase.db`.
-4. To run the web application execute `docker run -d -p 80:80 -v "<path-to-database>":/database poojananjunda/pooja_docker_images:latest`. Replace `<path-to-database>` appropriately. 
-5. The application can be launched by opening `http://localhost:80` in the browser.
+3. To run the web application execute `docker run -d -p 80:80 -v "<path-to-database>":/database poojananjunda/pooja_docker_images:latest`. Replace `"<path-to-database>"` appropriately without the database file name and with double quotes. 
+4. The application can be launched by opening `http://localhost:80` in the browser.
 
 <img src="images/TestWebApplication.PNG" width="100%" alt="Test Web Application">
 

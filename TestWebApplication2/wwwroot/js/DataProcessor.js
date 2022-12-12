@@ -53,19 +53,26 @@ function PostDataToTestTable2() {
     // Get user input
     const inputString = document.getElementById("InputData")
 
-    // Send the Http request
-    fetch('http://localhost:80/Data',
-        {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(
+    if (inputString.value === '') {
+        alert("Please enter the input before pressing submit button")
+        return
+    }
+    else {
+
+        // Send the Http request
+        fetch('http://localhost:80/Data',
             {
-                DataText: inputString.value
-            }),
-    })
-    .then((response) => console.log(response.status))
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(
+                    {
+                        DataText: inputString.value
+                    }),
+            })
+            .then((response) => console.log(response.status))
+    }
 }
 
 
